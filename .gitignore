@@ -4,3 +4,7 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+.agent
+everything-claude-code
+frontend/PR_DESCRIPTION.md
+frontend/INTERVIEW_PREP.md

@@ -8,16 +8,11 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 import { isLoggedIn } from "@/hooks/useAuth"
+import { Toaster } from "sonner"
 
 export const Route = createFileRoute("/_layout")({
   component: Layout,
-  beforeLoad: async () => {
-    if (!isLoggedIn()) {
-      throw redirect({
-        to: "/login",
-      })
-    }
-  },
+  // beforeLoad removed for frontend-only assessment
 })
 
 function Layout() {
@@ -34,6 +29,7 @@ function Layout() {
           </div>
         </main>
         <Footer />
+        <Toaster position="top-right" richColors />
       </SidebarInset>
     </SidebarProvider>
   )

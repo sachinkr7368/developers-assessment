@@ -14,15 +14,11 @@ import { User } from "./User"
 
 const baseItems: Item[] = [
   { icon: Home, title: "Dashboard", path: "/" },
-  { icon: Briefcase, title: "Items", path: "/items" },
+  { icon: Briefcase, title: "Mock Data Service", path: "/service" },
 ]
 
 export function AppSidebar() {
-  const { user: currentUser } = useAuth()
-
-  const items = currentUser?.is_superuser
-    ? [...baseItems, { icon: Users, title: "Admin", path: "/admin" }]
-    : baseItems
+  const items = baseItems
 
   return (
     <Sidebar collapsible="icon">
@@ -34,7 +30,7 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter>
         <SidebarAppearance />
-        <User user={currentUser} />
+        {/* Removed auth user profile display for mock environment */}
       </SidebarFooter>
     </Sidebar>
   )

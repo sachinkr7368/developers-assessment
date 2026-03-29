@@ -1,31 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router"
-
-import useAuth from "@/hooks/useAuth"
+import { Dashboard } from "@/components/Dashboard/Dashboard"
 
 export const Route = createFileRoute("/_layout/")({
-  component: Dashboard,
+  component: DashboardPage,
   head: () => ({
     meta: [
       {
-        title: "Dashboard - FastAPI Cloud",
+        title: "Worklog Payment Dashboard",
       },
     ],
   }),
 })
 
-function Dashboard() {
-  const { user: currentUser } = useAuth()
-
-  return (
-    <div>
-      <div>
-        <h1 className="text-2xl truncate max-w-sm">
-          Hi, {currentUser?.full_name || currentUser?.email} 👋
-        </h1>
-        <p className="text-muted-foreground">
-          Welcome back, nice to see you again!!!
-        </p>
-      </div>
-    </div>
-  )
+function DashboardPage() {
+  return <Dashboard />
 }
