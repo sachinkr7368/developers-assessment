@@ -7,7 +7,6 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-import { isLoggedIn } from "@/hooks/useAuth"
 import { Toaster } from "sonner"
 
 export const Route = createFileRoute("/_layout")({
